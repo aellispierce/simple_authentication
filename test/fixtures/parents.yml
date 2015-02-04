@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  child_name: 
+  name: 
+  email: 
+  teacher_id: 
+
+two:
+  child_name: 
+  name: 
+  email: 
+  teacher_id: 
