@@ -1,0 +1,8 @@
+<h1><%= @teacher.name.pluralize %> Parents</h1>
+<% @parents.each do |p| %>
+<h2><%= p.child_name %></h2>
+<h2><%= p.name %></h2>
+<h2><%= p.email%></h2>
+<% end %>
+
+<%= link_to "New Parents", new_parent_path, class: "btn" %>

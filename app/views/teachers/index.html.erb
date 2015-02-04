@@ -1,1 +1,9 @@
-<h1>Hello</h1>
+<h1>Hello <%= @current_teacher_name%></h1>
+<%= link_to "Logout",session_logout_path %>
+<%= link_to "See Parents", parents_path %>
+
+
+<h2> All Teachers </h2>
+<% @teachers.each do |t| %>
+  <h3><%= t.name %></h3>
+<% end %>
