@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
       @current_teacher = Teacher.find(session[:teacher_id])
       return true
     else
+      flash[:notice] = "You must log in to see that page"
       redirect_to(:controller => 'session', :action => 'new')
       return false
     end

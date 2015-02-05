@@ -11,7 +11,7 @@ class SessionController < ApplicationController
       make_session(teacher)
       redirect_to teachers_path
     else
-      flash.now[:wrong] = 'Invalid email/password combination'
+      flash.now[:notice] = 'Invalid email/password combination'
       render 'new'
     end
   end
