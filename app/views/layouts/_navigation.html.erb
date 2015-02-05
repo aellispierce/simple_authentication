@@ -5,13 +5,13 @@
         <li class="nav-link"><%= link_to "Home", root_path %></li>
         <li class="nav-link"><%=link_to "Edit Profile", session_profile_path if @current_teacher %></li>
         <li class="nav-link"><%=link_to "Add Parents", new_parent_path(:teacher_id=>@current_teacher.id) if @current_teacher %></a></li>
-        <li class="nav-link"><%=link_to "Logout",session_logout_path if @current_teacher %></li>
           </ul>
         </li>
       </ul>
     </nav>
     <div class="navigation-tools">
-      <%= link_to "Sign Up", new_teacher_path, :class => "sign-up" %>
+      <%=link_to "Logout",session_logout_path, :class => "sign-up" if @current_teacher %>
+      <%= link_to "Sign Up", new_teacher_path, :class => "sign-up" if @current_teacher==nil%>
     </div>
   </div>
 </header>

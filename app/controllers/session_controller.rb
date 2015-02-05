@@ -1,18 +1,17 @@
 class SessionController < ApplicationController
   before_action :authenticate_user, :only => [ :profile]
 
-  def new
-
-  end
 
    def login
-    teacher = Teacher.find_by(email: params[:email].downcase)
-    if teacher && teacher.authenticate(params[:password])
-      make_session(teacher)
-      redirect_to teachers_path
-    else
-      flash.now[:notice] = 'Invalid email/password combination'
-      render 'new'
+    if request.post?
+      teacher = Teacher.find_by(email: params[:email].downcase)
+      if teacher && teacher.authenticate(params[:password])
+        make_session(teacher)
+        redirect_to teachers_path
+      else
+        flash.now[:notice] = 'Invalid email/password combination'
+        render 'new'
+      end
     end
   end
 
@@ -30,7 +29,7 @@ class SessionController < ApplicationController
 
   def logout
     session[:teacher_id] = nil
-    render 'new'
+    render 'login'
   end
 
   private

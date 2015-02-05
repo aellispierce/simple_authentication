@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :teachers
 
 
-get 'session/new'
+
 get 'session/logout'
 post 'session/logout'
 get 'session/login'
