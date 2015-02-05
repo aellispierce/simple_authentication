@@ -3,9 +3,9 @@
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
         <li class="nav-link"><%= link_to "Home", root_path %></li>
-        <li class="nav-link"><%= link_to "Edit Profile", session_profile_path %></li>
-        <li class="nav-link"><%= link_to "Add Parents", new_parent_path(:teacher_id=>@current_teacher.id) %></a></li>
-        <li class="nav-link"><%= link_to "Logout",session_logout_path %></li>
+        <li class="nav-link"><%=link_to "Edit Profile", session_profile_path if @current_teacher %></li>
+        <li class="nav-link"><%=link_to "Add Parents", new_parent_path(:teacher_id=>@current_teacher.id) if @current_teacher %></a></li>
+        <li class="nav-link"><%=link_to "Logout",session_logout_path if @current_teacher %></li>
           </ul>
         </li>
       </ul>
