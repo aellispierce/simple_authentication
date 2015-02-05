@@ -33,7 +33,9 @@ class SessionController < ApplicationController
     render 'new'
   end
 
-  private def make_session(teacher)
+  private
+
+  def make_session(teacher)
     session[:teacher_id] = teacher.id
   end
 end
