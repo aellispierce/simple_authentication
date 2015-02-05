@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:edit, :update, :destroy]
-  before_action :authenticate_user, except: [:new]
+  before_action :authenticate_user, except: [:new, :create]
 
   def new
     @teacher = Teacher.new
@@ -22,10 +22,6 @@ class TeachersController < ApplicationController
     end
   end
 
-
-  def login
-
-  end
 
   def update
     if @teacher.update(teacher_params)
