@@ -23,8 +23,7 @@ class ParentsController < ApplicationController
   end
 
   def index
-    @parents= Teacher.find(session[:teacher_id]).parents
-    @teacher= Teacher.find(session[:teacher_id])
+
   end
 
 

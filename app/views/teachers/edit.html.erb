@@ -1,14 +1,16 @@
 <h1 class = "title"> Edit your profile </h1>
-<%= form_for(@teacher) do |f| %>
-<%= f.label :name %><br>
-<%= f.text_field :name %>
-<div class="field">
-  <%= f.label :email %><br>
-  <%= f.email_field :email %>
+<div class = "form">
+  <%= form_for(@teacher) do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field(:password, :value => @teacher.password) %>
+  </div><br>
+  <%= f.submit "Submit" %>
+  <% end %>
 </div>
-<div class="field">
-  <%= f.label :password %><br>
-  <%= f.password_field(:password, :value => @teacher.password) %>
-</div><br>
-<%= f.submit "Submit" %>
-<% end %>

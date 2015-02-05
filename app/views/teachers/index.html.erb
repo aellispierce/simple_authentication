@@ -1,8 +1,30 @@
-<h1 class="title">Hello <%= @current_teacher.name%></h1>
 
-<h1> Click See Parents to see your parent contact list </h1>
-<br>
-<h2> Your Colleagues </h2>
-<% @teachers.each do |t| %>
-  <p><%= t.name %></p>
-<% end %>
+<div class="hero">
+  <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Hello <%= @current_teacher.name%></h1>
+        <p>Welcome to your parent tracker.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<ul class="accordion-tabs-minimal">
+  <li class="tab-header-and-content">
+    <a href="#" class="tab-link is-active">Parents</a>
+    <div class="tab-content">
+      <p> <%= render :template => "parents/index" %> </p>
+    </div>
+  </li>
+  <li class="tab-header-and-content">
+    <a href="#" class="tab-link">Colleagues</a>
+    <div class="tab-content">
+      <h1 class = "title"> All Teachers</h1>
+      <p><% @teachers.each do |t| %>
+        <p><%= t.name %></p>
+      <% end %>
+    </div>
+  </li>
+</ul>

@@ -1,12 +1,13 @@
 <h1 class= "title">Login</h1>
+<div class ="form">
+  <%= form_tag :action => :login do %>
+    <%= label_tag :email, 'Email: ' %><br>
+    <%= text_field_tag :email %><br>
 
-<%= form_tag :action => :login do %>
-  <%= label_tag :email, 'Email: ' %><br>
-  <%= text_field_tag :email %><br>
+    <%= label_tag :password, 'Password: ' %><br>
+    <%= password_field_tag :password %><br>
 
-  <%= label_tag :password, 'Password: ' %><br>
-  <%= password_field_tag :password %><br>
-
-  <%= submit_tag 'Login' %>
-<% end %>
-<%= link_to "Sign Up", new_teacher_path, :class => "btn" %>
+    <%= submit_tag 'Login' %>
+  <% end %>
+  <%= link_to "Sign Up", new_teacher_path, :class => "btn" %>
+</div>

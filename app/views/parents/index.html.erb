@@ -1,10 +1,10 @@
-<h1 class = "title"><%= @teacher.name.possessive %> Parents</h1>
+<h1 class = "title"> Parents</h1>
 <h1>Click on a parent name to edit or delete </h1>
-<% @parents.each do |p| %>
+<% @current_teacher.parents.each do |p| %>
   <p>Parent Name: <%=link_to p.name, edit_parent_path(p) %></p>
   <p>Child's Name: <%= p.child_name %></p>
   <p>Parent Email:<%= p.email%></p>
 
 <% end %>
 
-<%= link_to "New Parents", new_parent_path %>
+<%= link_to "New Parents", new_parent_path(:teacher_id=>@current_teacher.id) %>
