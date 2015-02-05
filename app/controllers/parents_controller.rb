@@ -8,7 +8,7 @@ class ParentsController < ApplicationController
   def create
     @parent = Parent.new(parent_params)
     if @parent.save
-      redirect_to teachers_path, notice: 'Parent was successfully created.'
+      redirect_to parents_path, notice: 'Parent was successfully created.'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class ParentsController < ApplicationController
 
   def update
     if @parent.update(parent_params)
-      redirect_to @parent, notice: 'Parent was successfully updated.'
+      redirect_to parents_path, notice: 'Parent was successfully updated.'
     else
       render :edit
     end
@@ -49,7 +49,7 @@ class ParentsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def parent_params
-    params.require(:parent).permit(:name, :email, :childs_name, :teacher_id)
+    params.require(:parent).permit(:name, :email, :child_name, :teacher_id)
   end
 
 

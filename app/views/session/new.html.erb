@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<h1 class= "title">Login</h1>
 
 <%= form_tag :action => :login do %>
   <%= label_tag :email, 'Email: ' %><br>
@@ -9,3 +9,4 @@
 
   <%= submit_tag 'Login' %>
 <% end %>
+<%= link_to "Sign Up", new_teacher_path, :class => "btn" %>
