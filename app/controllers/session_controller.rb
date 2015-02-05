@@ -19,7 +19,7 @@ class SessionController < ApplicationController
 
   def profile
     if session[:teacher_id]
-      redirect_to edit_teacher_path(session[:teacher_id])
+      redirect_to edit_teacher_path(session[:teacher_id], :password=>@current_teacher.password,:password_confirmation=>@current_teacher.password)
     else
       redirect_to new_session_path, notice: 'Please log in to see this page'
     end
